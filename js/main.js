@@ -1,5 +1,5 @@
 import { createDateElement, createListItem, verificarListaVazia } from './dom.js';
-import { buildDateLabel } from './datetime.js';
+import buildDateLabel from './datetime.js';
 
 const inputItem = document.getElementById('input-item');
 const shopList = document.getElementById('lista-de-compras');

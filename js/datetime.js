@@ -1,4 +1,4 @@
-export function buildDateLabel()
+export default function buildDateLabel()
 {
   const now = new Date();
   const weekDay = now.toLocaleDateString('pt-BR', { weekday: 'long' });

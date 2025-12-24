@@ -17,24 +17,20 @@
 body {
     background: var(--degrade-azul);
     background-repeat: no-repeat;
-    height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 main {
     background-color: var(--neutro);
-    margin-top: 64px;
-
+    margin: 64px auto;
     display: flex;
     flex-direction: column;
     gap: 24px;
-
     width: 440px;
     padding: 56px;
-
     align-items: center;
     border-radius: 16px;
 }
@@ -130,10 +126,8 @@ x ul {
     top: -10%;
     width: 5px;
     height: 14px;
-
     border-top: 2px solid var(--neutro);
     border-left: 2px solid var(--neutro);
-
     transform: rotate(-140deg);
 }
 

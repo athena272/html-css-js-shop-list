@@ -1,19 +1,34 @@
-export function createListItem(text, id)
+const inputItem = document.getElementById('input-item');
+let contador = 0;
+
+export function createListItem()
 {
+    if (!inputItem.value)
+    {
+        alert('Por favor, insira um item!');
+        return;
+    }
+
     const li = document.createElement('li');
     const container = document.createElement('div');
     container.classList.add('lista-item-container');
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.id = id;
+    checkbox.id = `checkbox-${++contador}`;
 
     const name = document.createElement('p');
-    name.innerText = text;
+    name.innerText = inputItem.value;
 
     container.append(checkbox, name);
     li.appendChild(container);
-    return { li, checkbox, name };
+
+    checkbox.addEventListener('click', () =>
+    {
+        name.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+    });
+
+    return { li };
 }
 
 export function createDateElement(dateText)
@@ -22,18 +37,4 @@ export function createDateElement(dateText)
     p.innerText = dateText;
     p.classList.add('texto-data');
     return p;
-}
-
-export function verificarListaVazia(list)
-{
-    const mensagemListaVazia = document.querySelector('.mensagem-lista-vazia');
-
-    const listItems = list.querySelectorAll("li");
-    if (listItems.length === 0)
-    {
-        mensagemListaVazia.style.display = "block";
-    } else
-    {
-        mensagemListaVazia.style.display = "none";
-    }
 }
